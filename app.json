@@ -1,0 +1,5 @@
+{
+  "name": "todosListApp",
+  "displayName": "todosListApp",
+  "baseAPI": "https://web-api-test1.herokuapp.com/"
+}
