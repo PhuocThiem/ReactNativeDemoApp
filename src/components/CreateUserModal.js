@@ -32,13 +32,13 @@ class CreateModal extends Component {
 
   render() {
     const {isModalVisible} = this.state;
-    const {onCloseCreateModal, handleCreateUser, cUserResult} = this.props;
+    const {handleCreateUser, cUserResult} = this.props;
     return (
       <Modal isVisible={isModalVisible}>
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
             {cUserResult.requesting ? (
-              <LinearProgress color="primary" style={{width: 200}} />
+              <LinearProgress color="primary" style={styles.linearProgress} />
             ) : (
               <>
                 <Text style={styles.modalText}>Create a new user</Text>
@@ -82,14 +82,14 @@ class CreateModal extends Component {
                   <View>
                     <Pressable
                       style={[styles.createModalButton, styles.buttonSubmit]}
-                      onPress={() => handleCreateUser()}>
+                      onPress={handleCreateUser}>
                       <Text style={styles.textStyle}>Submit</Text>
                     </Pressable>
                   </View>
                   <View>
                     <Pressable
                       style={[styles.createModalButton, styles.buttonClose]}
-                      onPress={() => onCloseCreateModal()}>
+                      onPress={this.closeCreateModal}>
                       <Text style={styles.textStyle}>Close</Text>
                     </Pressable>
                   </View>

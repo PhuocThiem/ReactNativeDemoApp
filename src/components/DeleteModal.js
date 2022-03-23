@@ -27,15 +27,14 @@ class DeleteModal extends Component {
 
   render() {
     const {isModalVisible} = this.state;
-    const {deletingUser, onCloseDeleteModal, handleDeleteUser, dUserResult} =
-      this.props;
+    const {deletingUser, handleDeleteUser, dUserResult} = this.props;
 
     return (
       <Modal isVisible={isModalVisible}>
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
             {dUserResult.requesting ? (
-              <LinearProgress color="primary" style={{width: 200}} />
+              <LinearProgress color="primary" style={styles.linearProgress} />
             ) : (
               <>
                 <Text style={styles.modalText}>
@@ -45,14 +44,14 @@ class DeleteModal extends Component {
                   <View>
                     <Pressable
                       style={[styles.createModalButton, styles.buttonSubmit]}
-                      onPress={() => handleDeleteUser()}>
+                      onPress={handleDeleteUser}>
                       <Text style={styles.textStyle}>Yes</Text>
                     </Pressable>
                   </View>
                   <View>
                     <Pressable
                       style={[styles.createModalButton, styles.buttonClose]}
-                      onPress={() => onCloseDeleteModal()}>
+                      onPress={this.closeDeleteModal}>
                       <Text style={styles.textStyle}>No</Text>
                     </Pressable>
                   </View>

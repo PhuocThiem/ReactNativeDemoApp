@@ -115,4 +115,7 @@ export const styles = StyleSheet.create({
     margin: 5,
     borderBottomWidth: 1,
   },
+  linearProgress: {
+    width: 200,
+  },
 });

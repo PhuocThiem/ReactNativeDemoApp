@@ -28,14 +28,13 @@ class UpdateModal extends Component {
 
   render() {
     const {isModalVisible} = this.state;
-    const {updatingUser, onCloseUpdateModal, handleUpdateUser, uUserResult} =
-      this.props;
+    const {updatingUser, handleUpdateUser, uUserResult} = this.props;
     return (
       <Modal isVisible={isModalVisible}>
         <View style={styles.modalContainer}>
           <View style={styles.modalView}>
             {uUserResult.requesting ? (
-              <LinearProgress color="primary" style={{width: 200}} />
+              <LinearProgress color="primary" style={styles.linearProgress} />
             ) : (
               <>
                 <Text style={styles.modalText}>
@@ -52,14 +51,14 @@ class UpdateModal extends Component {
                   <View>
                     <Pressable
                       style={[styles.createModalButton, styles.buttonSubmit]}
-                      onPress={() => handleUpdateUser()}>
+                      onPress={handleUpdateUser}>
                       <Text style={styles.textStyle}>Update</Text>
                     </Pressable>
                   </View>
                   <View>
                     <Pressable
                       style={[styles.createModalButton, styles.buttonClose]}
-                      onPress={() => onCloseUpdateModal()}>
+                      onPress={this.closeUpdateModal}>
                       <Text style={styles.textStyle}>Close</Text>
                     </Pressable>
                   </View>

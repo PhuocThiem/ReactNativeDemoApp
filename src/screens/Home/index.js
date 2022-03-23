@@ -120,10 +120,7 @@ class Home extends Component {
                   ref={ref => {
                     this.createModalRef = ref;
                   }}
-                  onCloseCreateModal={() =>
-                    this.createModalRef.closeCreateModal()
-                  }
-                  handleCreateUser={() => this.hanldeCreateNewUser()}
+                  handleCreateUser={this.hanldeCreateNewUser}
                   cUserResult={cUserResult}
                 />
                 <UpdateModal
@@ -131,10 +128,7 @@ class Home extends Component {
                     this.updateModalRef = ref;
                   }}
                   updatingUser={updateUserItem}
-                  onCloseUpdateModal={() =>
-                    this.updateModalRef.closeUpdateModal()
-                  }
-                  handleUpdateUser={() => this.handleUpdateUser()}
+                  handleUpdateUser={this.handleUpdateUser}
                   uUserResult={uUserResult}
                 />
                 <DeleteModal
@@ -142,10 +136,7 @@ class Home extends Component {
                     this.deleteModalRef = ref;
                   }}
                   deletingUser={deleteUserItem}
-                  onCloseDeleteModal={() =>
-                    this.deleteModalRef.closeDeleteModal()
-                  }
-                  handleDeleteUser={() => this.handleDeleteUser()}
+                  handleDeleteUser={this.handleDeleteUser}
                   dUserResult={dUserResult}
                 />
               </>
