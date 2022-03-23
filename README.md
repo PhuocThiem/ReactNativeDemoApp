@@ -36,10 +36,10 @@ yarnn start
 ![ListOfUser](./src/assets//demo/ListOfUser.png)
 
 ### Create User
-![CreateUser](./src/assets//demo/CreateUserModal.png.png)
+![CreateUser](./src/assets//demo/CreateUserModal.png)
 
 ### Update User
-![UpdateUser](./src/assets//demo/UpdateUserModal.png.png)
+![UpdateUser](./src/assets//demo/UpdateUserModal.png)
 
 ### Delete User
-![DeleteUser](./src/assets//demo/DeleteUserModal.png.png)
+![DeleteUser](./src/assets//demo/DeleteUserModal.png)
