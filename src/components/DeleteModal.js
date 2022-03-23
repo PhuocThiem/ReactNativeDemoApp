@@ -14,15 +14,11 @@ class DeleteModal extends Component {
   }
 
   openDeleteModal = () => {
-    this.setState({
-      isModalVisible: true,
-    });
+    this.setState({isModalVisible: true});
   };
 
   closeDeleteModal = () => {
-    this.setState({
-      isModalVisible: false,
-    });
+    this.setState({isModalVisible: false});
   };
 
   render() {

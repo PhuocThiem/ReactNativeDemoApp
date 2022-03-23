@@ -19,14 +19,37 @@ class CreateModal extends Component {
   }
 
   openCreateModal = () => {
-    this.setState({
-      isModalVisible: true,
-    });
+    this.setState({isModalVisible: true});
   };
 
   closeCreateModal = () => {
+    this.setState({isModalVisible: false});
+  };
+
+  handleChangeName = name => {
     this.setState({
-      isModalVisible: false,
+      creatingUserInfo: {
+        ...this.state.creatingUserInfo,
+        name: name,
+      },
+    });
+  };
+
+  handleChangeUsename = username => {
+    this.setState({
+      creatingUserInfo: {
+        ...this.state.creatingUserInfo,
+        username: username,
+      },
+    });
+  };
+
+  handleChangePassword = password => {
+    this.setState({
+      creatingUserInfo: {
+        ...this.state.creatingUserInfo,
+        password: password,
+      },
     });
   };
 
@@ -45,38 +68,17 @@ class CreateModal extends Component {
                 <TextInput
                   style={styles.input}
                   placeholder="Enter name"
-                  onChangeText={newName =>
-                    this.setState({
-                      creatingUserInfo: {
-                        ...this.state.creatingUserInfo,
-                        name: newName,
-                      },
-                    })
-                  }
+                  onChangeText={this.handleChangeName}
                 />
                 <TextInput
                   style={styles.input}
                   placeholder="Enter username"
-                  onChangeText={newUsername =>
-                    this.setState({
-                      creatingUserInfo: {
-                        ...this.state.creatingUserInfo,
-                        username: newUsername,
-                      },
-                    })
-                  }
+                  onChangeText={this.handleChangeUsename}
                 />
                 <TextInput
                   style={styles.input}
                   placeholder="Enter password"
-                  onChangeText={newPass =>
-                    this.setState({
-                      creatingUserInfo: {
-                        ...this.state.creatingUserInfo,
-                        password: newPass,
-                      },
-                    })
-                  }
+                  onChangeText={this.handleChangePassword}
                 />
                 <View style={styles.createModalAction}>
                   <View>

@@ -15,15 +15,15 @@ class UpdateModal extends Component {
   }
 
   openUpdateModal = () => {
-    this.setState({
-      isModalVisible: true,
-    });
+    this.setState({isModalVisible: true});
   };
 
   closeUpdateModal = () => {
-    this.setState({
-      isModalVisible: false,
-    });
+    this.setState({isModalVisible: false});
+  };
+
+  handleChangeName = name => {
+    this.setState({UpdatingName: name});
   };
 
   render() {
@@ -42,9 +42,7 @@ class UpdateModal extends Component {
                 </Text>
                 <TextInput
                   style={styles.input}
-                  onChangeText={newName =>
-                    this.setState({UpdatingName: newName})
-                  }
+                  onChangeText={this.handleChangeName}
                   defaultValue={updatingUser.name}
                 />
                 <View style={styles.createModalAction}>
